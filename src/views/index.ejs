@@ -1,0 +1,25 @@
+<%- include('./includes/head')%>
+
+<body class="bg-dark">
+
+  <div class="container ">
+    <h1>
+
+      <% if (typeof titulo !== "undefined"){ %>
+      <%= titulo %>
+      <% } else {%>
+      <h1>titulo indisponivel</h1>
+      <% } %>
+
+    </h1>
+
+    <form action="/" method="post">
+      <input name="_csrf" value="<%= csrfToken %>">
+      <label for="input-teste-1">cliente</label>
+      <input type="text" name="cliente" id="input-teste-1">
+
+      <button class="btn btn-dark bg-dark">Validar</button>
+    </form>
+  </div>
+
+  <%- include('./includes/footer') %>
